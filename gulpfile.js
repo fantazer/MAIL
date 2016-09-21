@@ -31,17 +31,17 @@ gulp.task('build', function () {
 gulp.task('serve', function () {
     browserSync.init({
         notify: false,
-        reloadDelay: 300,
+        reloadDelay: 500,
         server: {
             baseDir: "./dist/",
         }
     });
-    browserSync.watch(["./scss/styles.scss" ,"./templates/**/*.html"]).on("change", browserSync.reload);
+    
 });
 
 //WATCH
 gulp.task('see',function(){
         gulp.watch('./scss/**/*.scss',['styles']);
-      gulp.watch('./templates/**/*.html',['inky']);
+        gulp.watch('./templates/**/*.html',['inky']);
 })
 gulp.task('default',['see','serve'] );
